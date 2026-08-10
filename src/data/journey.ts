@@ -44,6 +44,13 @@ export const journey: JourneyMilestone[] = [
     type: "project",
   },
   {
+    id: "tars-livechat",
+    year: "2026",
+    title: "TARS LIVE CHAT",
+    subtitle: "Real-time chat platform with Convex & Clerk",
+    type: "project",
+  },
+  {
     id: "whats-next",
     year: "2026+",
     title: "WHAT'S NEXT?",

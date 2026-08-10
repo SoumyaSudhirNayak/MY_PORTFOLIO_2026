@@ -121,6 +121,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 function getProjectGradient(id: string): string {
   const gradients: Record<string, string> = {
+    "tars-livechat": "linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #312E81 100%)",
     statxtract: "linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%)",
     driftseal: "linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #4338CA 100%)",
     haemolink: "linear-gradient(135deg, #450A0A 0%, #7F1D1D 50%, #991B1B 100%)",

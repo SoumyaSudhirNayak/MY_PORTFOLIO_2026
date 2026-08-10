@@ -29,14 +29,14 @@ export const technologies: Technology[] = [
     name: "React",
     category: "FULL-STACK / FRONTEND",
     libraries: ["Hooks", "Router", "Context API", "Vite", "GSAP"],
-    projects: ["driftseal", "haemolink", "outbreak-sentinal", "pediascape"],
+    projects: ["tars-livechat", "driftseal", "haemolink", "outbreak-sentinal", "pediascape"],
     description: "Component-driven user interfaces, state management, SPA routing, and interactive visual web experiences."
   },
   {
     name: "Node.js",
     category: "FULL-STACK / BACKEND",
     libraries: ["Express", "npm", "Async I/O", "REST Services"],
-    projects: ["haemolink", "outbreak-sentinal"],
+    projects: ["tars-livechat", "haemolink", "outbreak-sentinal"],
     description: "Asynchronous server-side JavaScript runtime for scalable network applications and RESTful APIs."
   },
   {
@@ -50,21 +50,21 @@ export const technologies: Technology[] = [
     name: "JavaScript",
     category: "FULL-STACK / WEB",
     libraries: ["ES6+", "DOM API", "Async/Await", "Fetch API"],
-    projects: ["pediascape", "haemolink"],
+    projects: ["tars-livechat", "pediascape", "haemolink"],
     description: "Core dynamic web programming language powering interactive frontend client applications."
   },
   {
     name: "TypeScript",
     category: "FULL-STACK / FRONTEND",
     libraries: ["Interfaces", "Generics", "Strict Typing", "Vite"],
-    projects: ["haemolink", "statxtract"],
+    projects: ["tars-livechat", "haemolink", "statxtract"],
     description: "Strongly-typed JavaScript superset ensuring type-safe frontend components and backend payloads."
   },
   {
     name: "Tailwind CSS",
     category: "FRONTEND / STYLING",
     libraries: ["Flexbox/Grid", "Responsive Layouts", "Dark Mode"],
-    projects: ["haemolink", "outbreak-sentinal"],
+    projects: ["tars-livechat", "haemolink", "outbreak-sentinal"],
     description: "Utility-first CSS framework for rapid responsive user interface engineering."
   },
 
@@ -80,7 +80,7 @@ export const technologies: Technology[] = [
     name: "REST APIs",
     category: "BACKEND / ARCHITECTURE",
     libraries: ["HTTP/HTTPS", "JSON", "OAuth2", "Rate Limiting"],
-    projects: ["statxtract", "driftseal", "haemolink", "outbreak-sentinal"],
+    projects: ["tars-livechat", "statxtract", "driftseal", "haemolink", "outbreak-sentinal"],
     description: "Architectural style for designing stateless, decoupled web services and API integration endpoints."
   },
 
@@ -128,7 +128,7 @@ export const technologies: Technology[] = [
     name: "Git",
     category: "TOOLS / DEVOPS",
     libraries: ["GitHub", "Branching Workflows", "Version Control", "CI/CD"],
-    projects: ["statxtract", "driftseal", "haemolink", "gramscape", "illegal-construction"],
+    projects: ["tars-livechat", "statxtract", "driftseal", "haemolink", "gramscape", "illegal-construction"],
     description: "Distributed version control system for code management, collaborative feature branching, and release tracking."
   },
   {

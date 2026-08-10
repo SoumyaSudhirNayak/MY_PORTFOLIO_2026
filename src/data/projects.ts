@@ -51,8 +51,52 @@ export const projects: Project[] = [
     confidential: true,
   },
   {
-    id: "driftseal",
+    id: "tars-livechat",
     number: "02",
+    title: "TARS LIVE CHAT",
+    subtitle: "Real-time Full-Stack Messaging & Collaboration Platform",
+    type: "case-study",
+    visibility: "public",
+    year: "2026",
+    featured: true,
+    status: "completed",
+    priority: 95,
+    category: ["Full Stack", "Real-time", "Authentication"],
+    tags: ["Convex", "Clerk", "Next.js", "Tailwind"],
+    description:
+      "A production-ready real-time chat application with 1-to-1 direct messaging, group chats, typing indicators, reactions, unread counts, and Clerk authentication.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Convex",
+      "Clerk",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "REST APIs",
+    ],
+    links: {
+      github: "https://github.com/SoumyaSudhirNayak/TARS_LIVECHAT",
+    },
+    role: "FullStack Developer",
+    caseStudy: {
+      problem:
+        "Real-time messaging applications require low-latency state synchronization, secure multi-tenant authentication, and reliable presence tracking across multiple devices.",
+      solution:
+        "Built a full-stack real-time chat application using Next.js App Router, Convex for reactive live queries/mutations, and Clerk for JWT-authenticated user management. Features direct messages, group management (rename/leave/delete), typing indicators, emoji reactions, and smart auto-scrolling.",
+      challenges: [
+        "Real-time reactivity for typing indicators, unread message badges, and presence heartbeats",
+        "Multi-tenant Clerk JWT authentication integration with Convex row-level security",
+        "Group conversation management, member permissions, and soft-delete message propagation",
+        "Smart auto-scrolling with unread jump indicators",
+      ],
+      outcome:
+        "A functional, production-deployed real-time messaging application with direct and group chat capabilities.",
+    },
+  },
+  {
+    id: "driftseal",
+    number: "03",
     title: "DRIFTSEAL",
     subtitle: "ML Pipeline Security Framework",
     type: "case-study",
@@ -94,7 +138,7 @@ export const projects: Project[] = [
   },
   {
     id: "haemolink",
-    number: "03",
+    number: "04",
     title: "HAEMOLINK",
     subtitle: "Intelligent Blood Donation & Delivery Ecosystem",
     type: "case-study",
@@ -138,7 +182,7 @@ export const projects: Project[] = [
   },
   {
     id: "outbreak-sentinal",
-    number: "04",
+    number: "05",
     title: "OUTBREAK SENTINAL",
     subtitle: "Real-time Outbreak Tracking & Resource Management",
     type: "case-study",
@@ -178,7 +222,7 @@ export const projects: Project[] = [
   },
   {
     id: "pediascape",
-    number: "05",
+    number: "06",
     title: "PEDIASCAPE",
     subtitle: "Comprehensive E-Learning Platform",
     type: "standard",
@@ -208,7 +252,7 @@ export const projects: Project[] = [
   },
   {
     id: "gramscape",
-    number: "06",
+    number: "07",
     title: "GRAMSCAPE",
     subtitle:
       "Gamification for Rural Planning using Drone, Land Survey Maps & GIS Data",
@@ -231,7 +275,7 @@ export const projects: Project[] = [
   },
   {
     id: "illegal-construction",
-    number: "07",
+    number: "08",
     title: "AI-BASED ILLEGAL CONSTRUCTION DETECTION",
     shortTitle: "CONSTRUCTION DETECTION",
     subtitle: "Satellite Imagery Analysis for Urban Compliance",

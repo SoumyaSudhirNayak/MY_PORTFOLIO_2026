@@ -24,9 +24,16 @@ export const journey: JourneyMilestone[] = [
   },
   {
     id: "haemolink",
-    year: "2025",
+    year: "2025-26",
     title: "HAEMOLINK",
     subtitle: "Real-time blood donation ecosystem",
+    type: "project",
+  },
+  {
+    id: "tars-livechat",
+    year: "2026",
+    title: "TARS LIVE CHAT",
+    subtitle: "Real-time chat platform with Convex & Clerk",
     type: "project",
   },
   {
@@ -41,13 +48,6 @@ export const journey: JourneyMilestone[] = [
     year: "2026",
     title: "DRIFTSEAL",
     subtitle: "ML security framework",
-    type: "project",
-  },
-  {
-    id: "tars-livechat",
-    year: "2026",
-    title: "TARS LIVE CHAT",
-    subtitle: "Real-time chat platform with Convex & Clerk",
     type: "project",
   },
   {

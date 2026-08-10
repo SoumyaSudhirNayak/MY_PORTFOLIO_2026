@@ -76,6 +76,7 @@ export const projects: Project[] = [
       "REST APIs",
     ],
     links: {
+      live: "https://ssn-livechat.vercel.app/",
       github: "https://github.com/SoumyaSudhirNayak/TARS_LIVECHAT",
     },
     role: "FullStack Developer",

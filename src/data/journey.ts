@@ -37,18 +37,18 @@ export const journey: JourneyMilestone[] = [
     type: "project",
   },
   {
-    id: "statathon",
-    year: "2026",
-    title: "STATATHON 2025-26",
-    subtitle: "Winner",
-    type: "achievement",
-  },
-  {
     id: "driftseal",
     year: "2026",
     title: "DRIFTSEAL",
     subtitle: "ML security framework",
     type: "project",
+  },
+  {
+    id: "statathon",
+    year: "2026",
+    title: "STATATHON 2025-26",
+    subtitle: "Winner",
+    type: "achievement",
   },
   {
     id: "whats-next",

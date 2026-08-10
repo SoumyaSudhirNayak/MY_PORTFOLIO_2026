@@ -47,7 +47,7 @@ export default function Journey() {
     <section className="journey section" id="journey" ref={sectionRef}>
       <div className="container">
         <span className="section-label">// PROGRESSION</span>
-        <h2 className="section-title">THE JOURNEY</h2>
+        <h2 className="section-title">THE PROJECT'S JOURNEY</h2>
 
         <div className={`journey__wrap ${inView ? "visible" : ""}`} ref={containerRef}>
 

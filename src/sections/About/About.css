@@ -1,0 +1,170 @@
+.about {
+  padding: var(--space-4xl) 0;
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.about__unified-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  gap: var(--space-4xl);
+}
+
+/* Left Column — Philosophy */
+.about__left-col {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.about__unified-grid.visible .about__left-col {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about__philosophy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  will-change: transform;
+}
+
+.about__philosophy-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.about__philosophy-highlight {
+  color: var(--accent);
+}
+
+.about__philosophy-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 480px;
+  font-weight: 400;
+}
+
+/* Right Column — About Details */
+.about__right-col {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s var(--ease-out) 0.2s, transform 0.8s var(--ease-out) 0.2s;
+}
+
+.about__unified-grid.visible .about__right-col {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about__bio {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xl);
+  max-width: 520px;
+}
+
+/* Attributes 01-05 List */
+.about__attributes-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.about__attribute-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  opacity: 0;
+  transform: translateX(15px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.about__unified-grid.visible .about__attribute-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about__attribute-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+.about__attribute-label {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+/* Languages Block */
+.about__languages-block {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about__languages-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.about__languages-text {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about__unified-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .about__philosophy-subtitle {
+    max-width: 100%;
+  }
+
+  .about__bio {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: var(--space-3xl) 0;
+  }
+
+  .about__philosophy-title {
+    font-size: clamp(2.2rem, 8vw, 3.8rem);
+  }
+
+  .about__attribute-item {
+    gap: var(--space-md);
+  }
+}

@@ -1,0 +1,106 @@
+.contact.section {
+  text-align: center;
+  padding-top: var(--space-xl);     /* 32px */
+  padding-bottom: var(--space-xl);  /* 32px */
+}
+
+.contact__content > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+
+.contact__content.visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+.contact__content.visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.contact__content.visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.contact__content.visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.contact__content.visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+
+.contact__label {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 500;
+  display: block;
+  margin-bottom: var(--space-md);   /* 16px instead of 24px */
+}
+
+.contact__headline {
+  margin-bottom: var(--space-md);   /* 16px instead of 24px */
+}
+
+.contact__word {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.contact__word--accent {
+  color: var(--accent);
+}
+
+.contact__text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);   /* 32px instead of 48px */
+}
+
+.contact__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);   /* 32px instead of 64px */
+}
+
+.contact__socials {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+}
+
+.contact__social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.contact__social:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .contact.section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  .contact__word {
+    font-size: clamp(3rem, 12vw, 6rem);
+  }
+
+  .contact__text {
+    font-size: 0.98rem;
+  }
+
+  .contact__actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .contact__actions .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,217 @@
+.case-study {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Header */
+.cs__header {
+  padding: 120px 0 var(--space-4xl);
+  border-bottom: 1px solid var(--border);
+}
+
+.cs__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-2xl);
+  transition: color var(--transition-fast);
+}
+
+.cs__back:hover {
+  color: var(--accent);
+}
+
+.cs__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.cs__number {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+.cs__year {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.cs__status {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+}
+
+.cs__restricted {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  padding: 3px 10px;
+  border: 1px solid rgba(245, 169, 0, 0.3);
+  border-radius: var(--radius-full);
+}
+
+.cs__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: var(--space-md);
+}
+
+.cs__subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: var(--space-xl);
+}
+
+.cs__achievement {
+  font-size: 0.9rem;
+  color: var(--accent);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(245, 169, 0, 0.08);
+  border-radius: var(--radius-md);
+  display: inline-block;
+  margin-bottom: var(--space-xl);
+}
+
+.cs__links {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Content */
+.cs__content {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.cs__section {
+  margin-bottom: var(--space-3xl);
+  max-width: 800px;
+}
+
+.cs__section-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: var(--space-lg);
+  text-transform: uppercase;
+}
+
+.cs__section-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.cs__techs,
+.cs__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.cs__challenges {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.cs__challenge {
+  display: flex;
+  gap: var(--space-md);
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding: var(--space-md);
+  border-left: 2px solid var(--accent);
+  background: var(--bg-elevated);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.cs__challenge-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Next Project */
+.cs__next {
+  padding: var(--space-4xl) 0;
+  border-top: 1px solid var(--border);
+}
+
+.cs__next-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.cs__next-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  transition: color var(--transition-fast);
+}
+
+.cs__next-link:hover {
+  color: var(--accent);
+}
+
+.cs__next-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .cs__header {
+    padding: 90px 0 var(--space-2xl);
+  }
+
+  .cs__title {
+    font-size: clamp(2.2rem, 8vw, 4rem);
+  }
+
+  .cs__subtitle {
+    font-size: 1rem;
+  }
+
+  .cs__content {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .cs__next-link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+}

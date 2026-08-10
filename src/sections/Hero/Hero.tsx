@@ -158,7 +158,7 @@ export default function Hero() {
           ref={identityRef}
         >
           <div className="hero__hello">
-            <span className="hero__hello-text">HELLO, I'M</span>
+            <span className="hero__hello-text">HELLO WORLD!, I'M</span>
           </div>
 
           <h1 className={`hero__name ${glitchActive ? "glitch active" : "glitch"}`} data-text={profile.brand}>

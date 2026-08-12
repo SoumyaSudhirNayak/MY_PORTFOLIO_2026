@@ -21,19 +21,25 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     if (prefersReducedMotion) return;
 
     const lenis = new Lenis({
-      duration: 1.0,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1.0,
-      touchMultiplier: 1.8,
+      touchMultiplier: 1.5,
       infinite: false,
       anchors: true,
     });
 
     lenisRef.current = lenis;
     (window as unknown as { lenisInstance?: Lenis }).lenisInstance = lenis;
+
+    // Auto-resize Lenis on content/layout changes
+    const resizeObserver = new ResizeObserver(() => {
+      lenis.resize();
+    });
+    resizeObserver.observe(document.body);
 
     let rafId: number;
 
@@ -46,6 +52,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
     return () => {
       cancelAnimationFrame(rafId);
+      resizeObserver.disconnect();
       lenis.destroy();
       lenisRef.current = null;
       delete (window as unknown as { lenisInstance?: Lenis }).lenisInstance;

@@ -1,0 +1,243 @@
+/* Case Study Glassmorphism Terminal Panel */
+.cs-terminal {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(245, 169, 0, 0.04);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  margin-left: auto;
+}
+
+.cs-terminal:hover {
+  border-color: rgba(245, 169, 0, 0.35);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.75),
+    0 0 35px rgba(245, 169, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Header Bar */
+.cs-terminal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(18, 18, 18, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cs-terminal__controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cs-terminal__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cs-terminal__dot.red {
+  background: #FF5F56;
+}
+
+.cs-terminal__dot.yellow {
+  background: #FFBD2E;
+}
+
+.cs-terminal__dot.green {
+  background: #27C93F;
+}
+
+.cs-terminal__title {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* Terminal Body */
+.cs-terminal__body {
+  padding: 20px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.cs-terminal__init-line {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.cs-terminal__prompt-symbol {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.cs-terminal__init-text {
+  color: #D4D4D4;
+}
+
+.cs-terminal__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: csTerminalFadeIn 0.4s ease forwards;
+}
+
+@keyframes csTerminalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Block Item */
+.cs-terminal__block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cs-terminal__label {
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.cs-terminal__value {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.cs-terminal__value.accent {
+  color: var(--accent-bright);
+}
+
+/* Categories Tags in Terminal */
+.cs-terminal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.cs-terminal__tags--horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.cs-terminal__tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+}
+
+/* Metadata Line */
+.cs-terminal__meta-line {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+.cs-terminal__meta-key {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cs-terminal__meta-sep {
+  margin: 0 6px;
+  opacity: 0.3;
+}
+
+/* CLI Ready End Line */
+.cs-terminal__cli-end {
+  font-size: 0.72rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.cs-terminal__cli-ready {
+  color: #10B981;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-right: 4px;
+}
+
+/* Cursor Animations */
+.cs-terminal__cursor {
+  color: var(--accent);
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.cs-terminal__cursor--blinking {
+  animation: csTerminalCursorBlink 1s infinite steps(2, start);
+}
+
+@keyframes csTerminalCursorBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 992px) {
+  .cs-terminal {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: var(--space-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-terminal__body {
+    padding: 14px;
+    min-height: 200px;
+    gap: 12px;
+  }
+
+  .cs-terminal__value {
+    font-size: 0.78rem;
+  }
+}

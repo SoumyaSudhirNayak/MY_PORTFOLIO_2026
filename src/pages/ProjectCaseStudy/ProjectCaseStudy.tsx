@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { getProjectById, getPublicProjects } from "../../data/projects";
 import { ExternalLink, ArrowLeft, ArrowRight } from "lucide-react";
 import { GithubIcon } from "../../components/icons/BrandIcons";
+import CaseStudyTerminal from "../../components/CaseStudyTerminal/CaseStudyTerminal";
 import Footer from "../../components/Footer/Footer";
 import "./ProjectCaseStudy.css";
 
@@ -16,6 +17,7 @@ export default function ProjectCaseStudy() {
   const allProjects = getPublicProjects();
   const currentIndex = allProjects.findIndex((p) => p.id === project.id);
   const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
+  const prevProject = allProjects[(currentIndex - 1 + allProjects.length) % allProjects.length];
 
   return (
     <div className="case-study">
@@ -27,39 +29,47 @@ export default function ProjectCaseStudy() {
             BACK TO PORTFOLIO
           </Link>
 
-          <div className="cs__header-content">
-            <div className="cs__meta">
-              <span className="cs__number">{project.number}</span>
-              <span className="cs__year">{project.year}</span>
-              {project.status && <span className="cs__status">{project.status.toUpperCase()}</span>}
-              {project.visibility === "restricted" && (
-                <span className="cs__restricted">RESTRICTED</span>
+          <div className="cs__header-grid">
+            {/* Left Column: Hero Title & Metadata */}
+            <div className="cs__header-left">
+              <div className="cs__meta">
+                <span className="cs__number">{project.number}</span>
+                <span className="cs__year">{project.year}</span>
+                {project.status && <span className="cs__status">{project.status.toUpperCase()}</span>}
+                {project.visibility === "restricted" && (
+                  <span className="cs__restricted">RESTRICTED</span>
+                )}
+              </div>
+
+              <h1 className="cs__title">{project.title}</h1>
+              <p className="cs__subtitle">{project.subtitle}</p>
+
+              {project.achievement && (
+                <div className="cs__achievement">
+                  🏆 {project.achievement.title}
+                  {project.achievement.organization && ` — ${project.achievement.organization}`}
+                </div>
               )}
+
+              <div className="cs__links">
+                {project.links?.github && project.visibility !== "restricted" && (
+                  <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                    <GithubIcon size={16} />
+                    VIEW ON GITHUB
+                  </a>
+                )}
+                {project.links?.live && project.visibility === "public" && (
+                  <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                    <ExternalLink size={16} />
+                    VIEW LIVE
+                  </a>
+                )}
+              </div>
             </div>
 
-            <h1 className="cs__title">{project.title}</h1>
-            <p className="cs__subtitle">{project.subtitle}</p>
-
-            {project.achievement && (
-              <div className="cs__achievement">
-                🏆 {project.achievement.title}
-                {project.achievement.organization && ` — ${project.achievement.organization}`}
-              </div>
-            )}
-
-            <div className="cs__links">
-              {project.links?.github && project.visibility !== "restricted" && (
-                <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                  <GithubIcon size={16} />
-                  VIEW ON GITHUB
-                </a>
-              )}
-              {project.links?.live && project.visibility === "public" && (
-                <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                  <ExternalLink size={16} />
-                  VIEW LIVE
-                </a>
-              )}
+            {/* Right Column: Reusable Terminal Metadata Inspector */}
+            <div className="cs__header-right">
+              <CaseStudyTerminal project={project} />
             </div>
           </div>
         </div>
@@ -72,23 +82,6 @@ export default function ProjectCaseStudy() {
           <h2 className="cs__section-title">OVERVIEW</h2>
           <p className="cs__section-text">{project.description}</p>
         </div>
-
-        {/* Technologies */}
-        <div className="cs__section">
-          <h2 className="cs__section-title">TECHNOLOGIES</h2>
-          <div className="cs__techs">
-            {project.technologies.map((tech) => (
-              <span key={tech} className="tag">{tech}</span>
-            ))}
-          </div>
-        </div>
-
-        {project.role && (
-          <div className="cs__section">
-            <h2 className="cs__section-title">ROLE</h2>
-            <p className="cs__section-text">{project.role}</p>
-          </div>
-        )}
 
         {/* Case Study Content */}
         {project.caseStudy?.problem && (
@@ -125,27 +118,33 @@ export default function ProjectCaseStudy() {
             <p className="cs__section-text">{project.caseStudy.outcome}</p>
           </div>
         )}
-
-        {/* Categories */}
-        <div className="cs__section">
-          <h2 className="cs__section-title">CATEGORIES</h2>
-          <div className="cs__categories">
-            {project.category.map((cat) => (
-              <span key={cat} className="tag">{cat}</span>
-            ))}
-          </div>
-        </div>
       </div>
 
-      {/* Next Project */}
-      {nextProject && nextProject.id !== project.id && (
-        <div className="cs__next">
-          <div className="container">
-            <span className="cs__next-label">NEXT PROJECT</span>
-            <Link to={`/work/${nextProject.id}`} className="cs__next-link">
-              <span className="cs__next-title">{nextProject.title}</span>
-              <ArrowRight size={24} />
-            </Link>
+      {/* Project Navigation (Previous / Next) */}
+      {allProjects.length > 1 && (
+        <div className="cs__nav">
+          <div className="container cs__nav-grid">
+            {/* PREVIOUS PROJECT */}
+            {prevProject && prevProject.id !== project.id ? (
+              <Link to={`/work/${prevProject.id}`} className="cs__nav-link cs__nav-link--prev">
+                <ArrowLeft size={22} />
+                <div className="cs__nav-info">
+                  <span className="cs__nav-label">PREVIOUS PROJECT</span>
+                  <span className="cs__nav-title">{prevProject.title}</span>
+                </div>
+              </Link>
+            ) : <div />}
+
+            {/* NEXT PROJECT */}
+            {nextProject && nextProject.id !== project.id ? (
+              <Link to={`/work/${nextProject.id}`} className="cs__nav-link cs__nav-link--next">
+                <div className="cs__nav-info">
+                  <span className="cs__nav-label">NEXT PROJECT</span>
+                  <span className="cs__nav-title">{nextProject.title}</span>
+                </div>
+                <ArrowRight size={22} />
+              </Link>
+            ) : <div />}
           </div>
         </div>
       )}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { technologies, getTechnologyByName } from "../../data/technologies";
 import { TechIcon } from "../../components/icons/TechIcons";
 import { useInView } from "../../hooks/useUtils";
@@ -95,13 +96,13 @@ export default function Toolbox() {
                       {activeTech.projects && activeTech.projects.length > 0 ? (
                         <div className="toolbox__term-projects">
                           {activeTech.projects.map((proj) => (
-                            <a
+                            <Link
                               key={proj}
-                              href={`/work/${proj}`}
+                              to={`/work/${proj}`}
                               className="toolbox__proj-badge"
                             >
                               {proj.toUpperCase()}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       ) : (

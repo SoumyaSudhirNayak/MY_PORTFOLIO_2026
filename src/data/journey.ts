@@ -37,6 +37,13 @@ export const journey: JourneyMilestone[] = [
     type: "project",
   },
   {
+    id: "bank-ledger",
+    year: "2026",
+    title: "BANK LEDGER",
+    subtitle: "Production backend & immutable accounting ledger",
+    type: "project",
+  },
+  {
     id: "driftseal",
     year: "2026",
     title: "DRIFTSEAL",

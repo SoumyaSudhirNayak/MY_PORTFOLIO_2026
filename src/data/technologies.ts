@@ -36,21 +36,21 @@ export const technologies: Technology[] = [
     name: "Node.js",
     category: "FULL-STACK / BACKEND",
     libraries: ["Express", "npm", "Async I/O", "REST Services"],
-    projects: ["tars-livechat", "haemolink", "outbreak-sentinal"],
+    projects: ["bank-ledger", "tars-livechat", "haemolink", "outbreak-sentinal"],
     description: "Asynchronous server-side JavaScript runtime for scalable network applications and RESTful APIs."
   },
   {
     name: "Express.js",
     category: "FULL-STACK / BACKEND",
     libraries: ["Middleware", "Routing", "JWT Auth", "CORS"],
-    projects: ["haemolink"],
+    projects: ["bank-ledger", "haemolink"],
     description: "Minimalist web framework for Node.js powering backend routing and authentication middleware."
   },
   {
     name: "JavaScript",
     category: "FULL-STACK / WEB",
     libraries: ["ES6+", "DOM API", "Async/Await", "Fetch API"],
-    projects: ["tars-livechat", "pediascape", "haemolink"],
+    projects: ["bank-ledger", "tars-livechat", "pediascape", "haemolink"],
     description: "Core dynamic web programming language powering interactive frontend client applications."
   },
   {
@@ -80,7 +80,7 @@ export const technologies: Technology[] = [
     name: "REST APIs",
     category: "BACKEND / ARCHITECTURE",
     libraries: ["HTTP/HTTPS", "JSON", "OAuth2", "Rate Limiting"],
-    projects: ["tars-livechat", "statxtract", "driftseal", "haemolink", "outbreak-sentinal"],
+    projects: ["bank-ledger", "tars-livechat", "statxtract", "driftseal", "haemolink", "outbreak-sentinal"],
     description: "Architectural style for designing stateless, decoupled web services and API integration endpoints."
   },
 
@@ -119,7 +119,7 @@ export const technologies: Technology[] = [
     name: "MongoDB",
     category: "DATABASE / NOSQL",
     libraries: ["Document Stores", "BSON", "Aggregation Pipeline", "Mongoose"],
-    projects: [],
+    projects: ["bank-ledger"],
     description: "Document-oriented NoSQL database for flexible JSON-like data schema storage."
   },
 
@@ -128,7 +128,7 @@ export const technologies: Technology[] = [
     name: "Git",
     category: "TOOLS / DEVOPS",
     libraries: ["GitHub", "Branching Workflows", "Version Control", "CI/CD"],
-    projects: ["tars-livechat", "statxtract", "driftseal", "haemolink", "gramscape", "illegal-construction"],
+    projects: ["bank-ledger", "tars-livechat", "statxtract", "driftseal", "haemolink", "gramscape", "illegal-construction"],
     description: "Distributed version control system for code management, collaborative feature branching, and release tracking."
   },
   {

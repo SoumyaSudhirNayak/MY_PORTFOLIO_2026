@@ -96,8 +96,52 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "driftseal",
+    id: "bank-ledger",
     number: "03",
+    title: "BANK LEDGER",
+    subtitle: "Production-Grade Backend & Immutable Double-Entry Accounting Ledger",
+    type: "case-study",
+    visibility: "public",
+    year: "2026",
+    featured: true,
+    status: "completed",
+    priority: 92,
+    category: ["Backend", "APIs", "Database", "Security", "Infrastructure"],
+    tags: ["Node.js", "Express.js", "MongoDB", "Double-Entry", "OAuth2"],
+    description:
+      "A production-grade backend application for a Bank Ledger featuring layered architecture, JWT authentication with token blacklisting, immutable double-entry accounting, real-time balance aggregation, 10-step atomic transfer flow with idempotency keys, and OAuth2 email receipt dispatch.",
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "BcryptJS",
+      "Nodemailer",
+      "REST APIs",
+    ],
+    links: {
+      github: "https://github.com/SoumyaSudhirNayak/BANK_LEDGER",
+    },
+    role: "Backend Engineer",
+    caseStudy: {
+      problem:
+        "Financial ledger systems require atomic transfer operations, strict account ownership authorization, and an append-only immutable audit trail to prevent fraud, race conditions, double-spending, and state corruption.",
+      solution:
+        "Engineered a 10-step atomic transfer workflow utilizing MongoDB ACID transactions, idempotency key validation, and Mongoose immutability guards that block ledger alterations. Integrated JWT authentication, token blacklisting, balance aggregation, and OAuth2 email receipt delivery.",
+      challenges: [
+        "Implementing strict append-only immutability guards across all Mongoose mutation hooks to guarantee ledger integrity",
+        "Designing a 10-step atomic transfer flow with idempotency keys to eliminate race conditions and double-spending",
+        "Aggregating real-time balances directly from double-entry credit/debit records using MongoDB Aggregation pipelines",
+        "Securing authentication with JWT token blacklisting and 3-day automatic MongoDB TTL expiration indexes",
+      ],
+      outcome:
+        "A production-grade financial backend service providing double-entry accounting, atomic transactions, and zero-trust security.",
+    },
+  },
+  {
+    id: "driftseal",
+    number: "04",
     title: "DRIFTSEAL",
     subtitle: "ML Pipeline Security Framework",
     type: "case-study",
@@ -139,7 +183,7 @@ export const projects: Project[] = [
   },
   {
     id: "haemolink",
-    number: "04",
+    number: "05",
     title: "HAEMOLINK",
     subtitle: "Intelligent Blood Donation & Delivery Ecosystem",
     type: "case-study",
@@ -183,7 +227,7 @@ export const projects: Project[] = [
   },
   {
     id: "outbreak-sentinal",
-    number: "05",
+    number: "06",
     title: "OUTBREAK SENTINAL",
     subtitle: "Real-time Outbreak Tracking & Resource Management",
     type: "case-study",
@@ -223,7 +267,7 @@ export const projects: Project[] = [
   },
   {
     id: "pediascape",
-    number: "06",
+    number: "07",
     title: "PEDIASCAPE",
     subtitle: "Comprehensive E-Learning Platform",
     type: "standard",
@@ -253,7 +297,7 @@ export const projects: Project[] = [
   },
   {
     id: "gramscape",
-    number: "07",
+    number: "08",
     title: "GRAMSCAPE",
     subtitle:
       "Gamification for Rural Planning using Drone, Land Survey Maps & GIS Data",
@@ -276,7 +320,7 @@ export const projects: Project[] = [
   },
   {
     id: "illegal-construction",
-    number: "08",
+    number: "09",
     title: "AI-BASED ILLEGAL CONSTRUCTION DETECTION",
     shortTitle: "CONSTRUCTION DETECTION",
     subtitle: "Satellite Imagery Analysis for Urban Compliance",
